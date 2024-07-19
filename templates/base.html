@@ -38,7 +38,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicons/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'assets/img/favicons/manifest.json' %}">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="{% static 'assets/img/favicons/ms-icon-144x144.png'% }">
     <meta name="theme-color" content="#ffffff">
 
     <!--==============================
@@ -130,7 +130,7 @@
                                     <li><a href="cart.html">Shopping Cart</a></li>
                                     <li><a href="checkout.html">Check Out</a></li>
                                     <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="login-register.html">Login & Register</a></li>
+                                    <li><a href="{% url 'login' %}">Login & Register</a></li>
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
@@ -187,7 +187,7 @@
                                             <li><a href="cart.html">Shopping Cart</a></li>
                                             <li><a href="checkout.html">Check Out</a></li>
                                             <li><a href="wishlist.html">Wishlist</a></li>
-                                            <li><a href="login-register.html">Login / Register</a></li>
+                                            <li><a href="{% url 'login' %}">Login & Register</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -349,7 +349,7 @@
                                         <li><a href="cart.html">Shopping Cart</a></li>
                                         <li><a href="checkout.html">Check Out</a></li>
                                         <li><a href="wishlist.html">Wishlist</a></li>
-                                        <li><a href="login-register.html">Login & Register</a></li>
+                                        <li><a href="{% url 'login' %}">Login & Register</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
@@ -406,7 +406,7 @@
                                                 <li><a href="cart.html">Shopping Cart</a></li>
                                                 <li><a href="checkout.html">Check Out</a></li>
                                                 <li><a href="wishlist.html">Wishlist</a></li>
-                                                <li><a href="login-register.html">Login / Register</a></li>
+                                                <li><a href="{% url 'login' %}">Login & Register</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -435,18 +435,18 @@
       Hero Area
     ==============================-->
     <div class="  ">
-        <div class="vs-hero-carousel hero-layout6" data-globalbgimage="assets/img/hero/hero-bg-6-1.jpg" data-height="810" data-container="1900" data-slidertype="responsive">
+        <div class="vs-hero-carousel hero-layout6" data-globalbgimage="{% static 'assets/img/nature.jpg' %}" data-height="810" data-container="1900" data-slidertype="responsive">
             <!-- Slide 1-->
             <div class="ls-slide" data-ls="duration:12000; transition2d:5; kenburnsscale:1.2;">
-                <img width="781" height="534" src="{% static 'assets/img/hero/hero-6-1.png' %}" class="ls-l ls-hide-tablet ls-hide-phone ls-hide-hd" alt="image" style="top:257px; left:1119px; background-size:inherit; background-position:inherit;" data-ls="offsetxin:100; durationin:1500; delayin:500; static:forever;">
-                <img width="781" height="534" src="{% static 'assets/img/hero/hero-6-1.png' %}" class="ls-l ls-hide-desktop" alt="image" style="top:237px; left:1121px; background-size:inherit; background-position:inherit;" data-ls="offsetxin:100; durationin:1500; delayin:500; static:forever;">
+                <img width="781" height="534" src="{% static 'assets/img/natur.png' %}" class="ls-l ls-hide-tablet ls-hide-phone ls-hide-hd" alt="image" style="top:257px; left:1119px; background-size:inherit; background-position:inherit;" data-ls="offsetxin:100; durationin:1500; delayin:500; static:forever;">
+                <img width="781" height="534" src="{% static 'assets/img/hero/hero-6-1.jpg' %}" class="ls-l ls-hide-desktop" alt="image" style="top:237px; left:1121px; background-size:inherit; background-position:inherit;" data-ls="offsetxin:100; durationin:1500; delayin:500; static:forever;">
                 <img width="658" height="543" src="{% static 'assets/img/hero/hero-6-1-1.png' %}" class="ls-l ls-hide-tablet ls-hide-phone" alt="image" style="top:215px; left:969px; background-size:inherit; background-position:inherit;">
                 <p style="top:365px; left:375px; font-weight:700; background-size:inherit; background-position:inherit; font-size:35px; font-family:Amatic SC; color:#ffffff; letter-spacing:1px;" class="ls-l ls-hide-tablet ls-hide-phone" data-ls="offsetyin:-100; durationin:1500; delayin:800; easingin:easeOutQuint;">100% Organic Fruits</p>
                 <p style="top:405px; left:375px; font-weight:700; background-size:inherit; background-position:inherit; font-size:65px; color:#fcd55c; font-family:'Advent Pro', sans-serif;" class="ls-l ls-hide-tablet ls-hide-phone" data-ls="offsetxin:-200; durationin:1500; easingin:easeOutQuint;">Organic Plants and</p>
                 <p style="top:485px; left:375px; font-weight:700; background-size:inherit; background-position:inherit; font-size:65px; color:#fcd55c; font-family:'Advent Pro', sans-serif;" class="ls-l ls-hide-tablet ls-hide-phone" data-ls="offsetxin:-200; durationin:1500; delayin:400; easingin:easeOutQuint;">100% Fresh Fruits</p>
-                <div style="{% static 'top:611px; left:375px; backgrou' %}nd-size:inherit; background-position:inherit;" class="ls-l ls-hide-tablet ls-hide-phone" data-ls="offsetyin:100; durationin:1500; delayin:800; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;">
+                <div style="top:611px; left:375px; background-size:inherit; background-position:inherit;" class="ls-l ls-hide-tablet ls-hide-phone" data-ls="offsetyin:100; durationin:1500; delayin:800; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;">
                     <a href="shop.html" class="vs-btn style5 ls-btn">Start Shopping<i class="far fa-angle-right"></i></a>
-                </div>{% static '
+                </div>
                 <img width="658" height="543" src="{% static 'assets/img/hero/hero-6-1-1.png' %}" class="ls-l ls-hide-desktop" alt="image" style="top:54px; left:916px; background-size:inherit; background-position:inherit; width:835px; height:689px;">
                 <p style="top:150px; left:100px; font-weight:700; background-size:inherit; background-position:inherit; font-family:Amatic SC; color:#ffffff; letter-spacing:1px; font-size:70px;" class="ls-l ls-hide-desktop ls-hide-phone" data-ls="offsetyin:-100; durationin:1500; delayin:800; easingin:easeOutQuint;">100% Organic Fruits</p>
                 <p style="top:240px; left:100px; font-weight:700; background-size:inherit; background-position:inherit; font-size:100px; color:#fcd55c; font-family:'Advent Pro', sans-serif;" class="ls-l ls-hide-desktop ls-hide-phone" data-ls="offsetxin:-200; durationin:1500; easingin:easeOutQuint;">Organic Plants and</p>
@@ -490,7 +490,7 @@
                 <div style="top:611px; left:375px; background-size:inherit; background-position:inherit;" class="ls-l ls-hide-tablet ls-hide-phone" data-ls="offsetyin:100; durationin:1500; delayin:800; easingin:easeOutQuint; offsetyout:200; durationout:1500; easingout:easeOutQuint;">
                     <a href="shop.html" class="vs-btn style5 ls-btn">Start Shopping<i class="far fa-angle-right"></i></a>
                 </div>
-                <img width="687" height="554" src="assets/img/hero/hero-6-1-2.png" class="ls-l ls-hide-desktop" alt="image" style="top:54px; left:916px; background-size:inherit; background-position:inherit; width:835px; height:689px;">
+                <img width="687" height="554" src="{% static 'assets/img/hero/hero-6-1-2.png' %}" class="ls-l ls-hide-desktop" alt="image" style="top:54px; left:916px; background-size:inherit; background-position:inherit; width:835px; height:689px;">
                 <p style="top:150px; left:100px; font-weight:700; background-size:inherit; background-position:inherit; font-family:Amatic SC; color:#ffffff; letter-spacing:1px; font-size:70px;" class="ls-l ls-hide-desktop ls-hide-phone" data-ls="offsetyin:-100; durationin:1500; delayin:800; easingin:easeOutQuint;">Blessed Be The Fruit</p>
                 <p style="top:240px; left:100px; font-weight:700; background-size:inherit; background-position:inherit; font-size:100px; color:#fcd55c; font-family:'Advent Pro', sans-serif;" class="ls-l ls-hide-desktop ls-hide-phone" data-ls="offsetxin:-200; durationin:1500; easingin:easeOutQuint;">Green Paradise Farm</p>
                 <p style="top:358px; left:100px; font-weight:700; background-size:inherit; background-position:inherit; font-size:100px; color:#fcd55c; font-family:'Advent Pro', sans-serif;" class="ls-l ls-hide-desktop ls-hide-phone" data-ls="offsetxin:-200; durationin:1500; delayin:400; easingin:easeOutQuint;">&amp; Healthy Fridge</p>
@@ -503,7 +503,7 @@
 
             <!-- Slide 3-->
             <div class="ls-slide" data-ls="duration:12000; transition2d:5; kenburnsscale:1.2;">
-                <img width="639" height="536" src="assets/img/hero/hero-6-1-3.png" class="ls-l ls-hide-tablet ls-hide-phone" alt="image" style="top:215px; left:969px; background-size:inherit; background-position:inherit;">
+                <img width="639" height="536" src="{% static 'assets/img/hero/hero-6-1-3.png' %}" class="ls-l ls-hide-tablet ls-hide-phone" alt="image" style="top:215px; left:969px; background-size:inherit; background-position:inherit;">
                 <p style="top:365px; left:375px; font-weight:700; background-size:inherit; background-position:inherit; font-size:35px; font-family:Amatic SC; color:#ffffff; letter-spacing:1px;" class="ls-l ls-hide-tablet ls-hide-phone" data-ls="offsetyin:-100; durationin:1500; delayin:800; easingin:easeOutQuint;">Tip Top Quality</p>
                 <p style="top:405px; left:375px; font-weight:700; background-size:inherit; background-position:inherit; font-size:65px; color:#fcd55c; font-family:'Advent Pro', sans-serif;" class="ls-l ls-hide-tablet ls-hide-phone" data-ls="offsetxin:-200; durationin:1500; easingin:easeOutQuint;">Grass-Fed &amp; Gorgeous</p>
                 <p style="top:485px; left:375px; font-weight:700; background-size:inherit; background-position:inherit; font-size:65px; color:#fcd55c; font-family:'Advent Pro', sans-serif;" class="ls-l ls-hide-tablet ls-hide-phone" data-ls="offsetxin:-200; durationin:1500; delayin:400; easingin:easeOutQuint;">Natural Radiance</p>
@@ -847,11 +847,11 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="vs-product-box3 ">
                                 <div class="product-img">
-                                    <a href="shop-details.html"><img src="{% static 'assets/img/shop/product-3-8.png" alt="Product Image" class="w-100"></a>
+                                    <a href="shop-details.html"><img src="{% static 'assets/img/shop/product-3-8.png' %}" alt="Product Image" class="w-100"></a>
                                     <span class="product-tag3">Sale</span>
                                 </div>
                                 <div class="actions-btn">
-                                    <a href="{% static 'assets/img/shop/product-3-8.png" class="icon-btn popup-image"><i class="far fa-search"></i></a>
+                                    <a href="{% static 'assets/img/shop/product-3-8.png' %}" class="icon-btn popup-image"><i class="far fa-search"></i></a>
                                     <a href="wishlist.html" class="icon-btn"><i class="fal fa-heart"></i></a>
                                     <a href="cart.html" class="vs-btn style4 cart-btn"><i class="fal fa-cart-plus"></i>Add To Cart</a>
                                 </div>
@@ -1359,7 +1359,7 @@
                 </div>
                 <div class="col-lg order-1 order-lg-2">
                     <div class="img-box3">
-                        <img src="{% static 'assets/img/about/ab-7-1.png' %}" alt="About Image">
+                        <img src="{% static 'assets/img/nature.jpg' %}" alt="About Image">
                     </div>
                 </div>
                 <div class="col-lg-auto order-2 order-lg-3">

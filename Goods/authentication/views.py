@@ -5,12 +5,16 @@ from django.contrib.auth.models import User
 
 
 def register_user(request):
+    print(request.POST['username'])
     if request.method == 'POST':
+        print(request.POST['username'])
         User.objects.create_user(
             username = request.POST['username'],
-            password = request.POST['password']
+            password = request.POST['password'],
+            email= request.POST['email']
         )
-    return render(request, 'register.html')
+        return redirect('login')
+    return render(request, 'login-register.html')
 
 
 def login_user(request):
@@ -21,9 +25,14 @@ def login_user(request):
         if user:
             login(request, user)
             return redirect('index')
-    return render(request, 'login.html')
+        else:
+            return redirect('error')
+    return render(request, 'login-register.html')
 
 
 def log_out(request):
     logout(request)
     return redirect('index')
+
+def error(request):
+    return render(request, 'error.html')

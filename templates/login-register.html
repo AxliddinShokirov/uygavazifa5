@@ -220,6 +220,7 @@
                                             <li><a href="team.html">Team</a></li>
                                             <li><a href="faq.html">FAQ Page</a></li>
                                             <li><a href="contact.html">Contact Us</a></li>
+                                            <li><a href="contact.html">log out</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Pagelist 3</a>
@@ -247,7 +248,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="contact.html">Contact Us</a>
+                                <a href="contact.html">Log out</a>
                             </li>
                         </ul>
                     </nav>
@@ -359,6 +360,7 @@
                         <ul>
                             <li><a href="login-register.html">Login</a></li>
                             <li><a href="login-register.html">Register</a></li>
+                            <li><a href="#">logout</a></li>
                         </ul>
                     </div>
                 </div>
@@ -428,6 +430,7 @@
                                                 <li><a href="team.html">Team</a></li>
                                                 <li><a href="faq.html">FAQ Page</a></li>
                                                 <li><a href="contact.html">Contact Us</a></li>
+                                                <li><a href="contact.html">log out</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="#">Pagelist 3</a>
@@ -457,6 +460,7 @@
                                 <li>
                                     <a href="contact.html">Contact Us</a>
                                 </li>
+                                <li><a href="contact.html">log out</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -504,30 +508,21 @@
                                             </div>
                                             <div class="tab-content">
                                                 <div class="tab-pane fade active show" data-tab="login" id="login" aria-labelledby="login-tab">
-                                                    <form method="post" class="woocommerce-form login">
+                                                    <form method="post" action="{% url 'login' %}" class="woocommerce-form login">
                                                         {% csrf_token %}
                                                         <p class="form-group"><input name="username" class="form-control border" type="text" placeholder="User Name"></p>
                                                         <p class="form-group"><input class="form-control border" name="password" type="password" placeholder="Password"></p>
-                                                        <p class="custom-checkbox notice"><input id="remember" value="forever" name="rememberme" type="checkbox"><label for="remember">Remember me<span class="checkmark"></span></label></p>
                                                         <p class="form-group"><button type="submit" class="vs-btn">Login</button></p>
                                                         <p><a href="#" class="btn-inline">Forgot Your Password?</a></p>
                                                     </form>
                                                 </div>
+
                                                 <div class="tab-pane fade" data-tab="register" id="register" aria-labelledby="register-tab">
-                                                    <form method="post" class="woocommerce-form register">
+                                                    <form method="post" action="{% url 'register' %}" class="woocommerce-form register">
                                                         {% csrf_token %}
                                                         <p class="form-group"><input name="email" class="form-control" type="email" placeholder="Email"></p>
-                                                        <p class="form-group"><input name="password" class="form-control" type="password" placeholder="Password"></p>
-                                                        <div class="user-role mt-40">
-                                                            <div class="custom-checkbox">
-                                                                <input id="customer" type="radio" name="role" value="customer" checked="checked">
-                                                                <label for="customer" class="radio">I am a customer <span class="checkmark"></span></label>
-                                                            </div>
-                                                            <div class="custom-checkbox">
-                                                                <input id="seller" type="radio" name="role" value="seller">
-                                                                <label for="seller" class="radio">I am a vendor <span class="checkmark"></span></label>
-                                                            </div>
-                                                        </div>
+                                                        <p class="form-group"><input name="username" class="form-control" type="text" placeholder="User Name"></p>
+                                                        <p class="form-group"><input class="form-control" name="password" type="password" placeholder="Password"></p>
                                                         <div>
                                                             <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#">privacy policy</a>.</p>
                                                         </div>
