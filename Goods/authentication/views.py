@@ -5,9 +5,7 @@ from django.contrib.auth.models import User
 
 
 def register_user(request):
-    print(request.POST['username'])
     if request.method == 'POST':
-        print(request.POST['username'])
         User.objects.create_user(
             username = request.POST['username'],
             password = request.POST['password'],

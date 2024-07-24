@@ -1,6 +1,9 @@
-from django.urls import path
+from django.urls import path, include
 from Goods import views
 
 urlpatterns = [
-    path('login', views.login, name='login')
+    path('', views.main, name='index'),
+    path('authentication/', include('Goods.authentication.urls')),
+    path('back-office/', include('Goods.back-office.urls')),
+    
 ]

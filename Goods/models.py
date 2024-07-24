@@ -3,6 +3,16 @@ from django.contrib.auth.models import User
 from random import sample
 import string
 
+class Banner(models.Model):
+    title = models.CharField(max_length=255)
+    sub_title = models.CharField(max_length=255, blank=True, null=True)
+    img = models.ImageField(upload_to='banners/'),
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
+
 class Category(models.Model):
     name = models.CharField(max_length=255)
     generate_code = models.CharField(max_length=255, blank=True, unique=True)
@@ -16,16 +26,16 @@ class Category(models.Model):
         super(Category, self).save(*args, **kwargs)
 
 class Product(models.Model):
-    name = models.CharField(max_length=255)
-    quantity = models.PositiveIntegerField(default=1)
-    price = models.DecimalField(max_digits=8, decimal_places=2)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    description = models.TextField()
+    name:str = models.CharField(max_length=255)
+    quantity:int = models.PositiveIntegerField(default=1)
+    price:float = models.DecimalField(max_digits=8, decimal_places=2)
+    category:Category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    description:str = models.TextField()
 
     def __str__(self):
         return self.name
 
-class Productimg(models.Model):
+class ProductImg(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     img = models.ImageField(upload_to='product-img')
 

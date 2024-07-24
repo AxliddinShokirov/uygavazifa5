@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        body {
+            background-image: url('https://example.com/your-background.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 1200px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #555;
+        }
+        tr:hover {
+            background-color: #333;
+        }
+        a {
+            color: #00f;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .create-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px 0;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .create-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'createProduct' %}" class="create-btn">Create</a>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Category</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+            {% for product in queryset %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ product.category.name }}</td>
+                <td>{{ product.name }}</td>
+                <td><a href="{% url 'detailProduct' product.id %}">Detail</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
